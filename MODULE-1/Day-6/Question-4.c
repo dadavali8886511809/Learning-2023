@@ -9,6 +9,25 @@ struct Student {
     float marks;
 };
 
+
+void swap(struct Student* a, struct Student* b) {
+    struct Student temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+
+void sort_students(struct Student* students, int num_students) {
+    for (int i = 0; i < num_students - 1; i++) {
+        for (int j = 0; j < num_students - i - 1; j++) {
+            if (students[j].marks < students[j + 1].marks) {
+                swap(&students[j], &students[j + 1]);
+            }
+        }
+    }
+}
+
+
 void display_students(const struct Student* students, int num_students) {
     for (int i = 0; i < num_students; i++) {
         printf("Student %d:\n", i + 1);
@@ -20,12 +39,15 @@ void display_students(const struct Student* students, int num_students) {
 }
 
 int main() {
-    int num_students = 3;
+    int num_students = 4;
     struct Student students[] = {
         { 1001, "John", 85.5 },
         { 1002, "Alice", 92.0 },
-        { 1003, "Bob", 78.8 }
+        { 1003, "Bob", 78.8 },
+        { 1004, "Emma", 91.2 }
     };
+
+    sort_students(students, num_students);
 
     display_students(students, num_students);
 

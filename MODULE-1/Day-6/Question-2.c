@@ -1,5 +1,6 @@
 // 2. Write a function to initialize all members in the above array of structures
 
+
 #include <stdio.h>
 #include <string.h>
 

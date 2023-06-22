@@ -1,6 +1,5 @@
 // 3. Write a function to display all members in the above array of structures
 
-
 #include <stdio.h>
 #include <string.h>
 
@@ -9,6 +8,7 @@ struct Student {
     char name[20];
     float marks;
 };
+
 
 void display_students(const struct Student* students, int num_students) {
     for (int i = 0; i < num_students; i++) {
@@ -27,6 +27,7 @@ int main() {
         { 1002, "Alice", 92.0 },
         { 1003, "Bob", 78.8 }
     };
+
     display_students(students, num_students);
 
     return 0;

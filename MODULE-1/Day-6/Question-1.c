@@ -1,4 +1,4 @@
-/*            **********Level-1:*************
+/*   **********Level-1:***********
 
 1. Assume User will be providing input in the form of a string as show below. 
 Write a function to parse the string and initialize an array of structures. 
@@ -12,7 +12,6 @@ Example Structure :
     };
 
 Note: User must be able define the no. of inputs/size of the array during runtime. */
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -40,6 +39,7 @@ void parse_string(const char* input, struct Student* students, int num_students)
         token = strtok(NULL, " ");
         students[i].marks = atof(token);
 
+
         token = strtok(NULL, " ");
     }
 
@@ -60,7 +60,7 @@ int main() {
         printf("Name: %s\n", students[i].name);
         printf("Marks: %.2f\n", students[i].marks);
     }
-    
+
     free(students);
 
     return 0;
